@@ -1,5 +1,16 @@
 node {
 
+    def domain
+
+    if (env.BRANCH_NAME == 'master') {
+        domain = 'www.nearzero.io'
+        deploy = 'deploy.sh'
+    }
+    else {
+        domain = 'www2.nearzero.io'
+        deploy = 'deploy-dev.sh'
+    }
+
     stage('Build') {
         checkout scm
         sh "docker build --no-cache -t p0rt23/caddy ."
@@ -7,28 +18,28 @@ node {
 
     stage('Deploy') {
         try {
-            sh "docker stop www.nearzero.io"
-            sh "docker rm www.nearzero.io"
+            sh "docker stop ${domain}"
+            sh "docker rm ${domain}"
         }
         catch (Exception e) { 
             
         }
         
-        sh "./deploy.sh"
+        sh "./${deploy}"
 
-        sh ''' 
+        sh """
             docker run \
                 -d \
                 --restart always \
-                --name www.nearzero.io \
-                -e "CADDYPATH=/opt/caddy/.caddy" \
-                -v /home/docker/volumes/www.nearzero.io/:/opt/caddy/ \
-                --network="user-bridge" \
-                --label "traefik.enable=true" \
-                --label "traefik.docker.network=user-bridge" \
-                --label "traefik.basic.frontend.rule=Host:www.nearzero.io" \
+                --name ${domain} \
+                -e 'CADDYPATH=/opt/caddy/.caddy' \
+                -v /home/docker/volumes/${domain}/:/opt/caddy/ \
+                --network='user-bridge' \
+                --label 'traefik.enable=true' \
+                --label 'traefik.docker.network=user-bridge' \
+                --label 'traefik.basic.frontend.rule=Host:${domain}' \
                 p0rt23/caddy
-        '''
+        """
     }
 
 }
