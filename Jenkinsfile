@@ -36,7 +36,6 @@ node {
                 -v /home/docker/volumes/${domain}/:/opt/caddy/ \
                 --network='traefik' \
                 --label 'traefik.enable=true' \
-                --label 'traefik.docker.network=user-bridge' \
                 --label 'traefik.basic.frontend.rule=Host:${domain}' \
                 p0rt23/caddy
         """
