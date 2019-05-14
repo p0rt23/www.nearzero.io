@@ -34,7 +34,7 @@ node {
                 --name ${domain} \
                 -e 'CADDYPATH=/opt/caddy/.caddy' \
                 -v /home/docker/volumes/${domain}/:/opt/caddy/ \
-                --network='user-bridge' \
+                --network='traefik' \
                 --label 'traefik.enable=true' \
                 --label 'traefik.docker.network=user-bridge' \
                 --label 'traefik.basic.frontend.rule=Host:${domain}' \
