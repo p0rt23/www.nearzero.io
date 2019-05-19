@@ -1,14 +1,17 @@
 node {
 
     def domain
+    def restart
 
     if (env.BRANCH_NAME == 'master') {
-        domain = 'www.nearzero.io'
-        deploy = 'deploy.sh'
+        domain  = 'www.nearzero.io'
+        deploy  = 'deploy.sh'
+        restart = 'always'
     }
     else {
-        domain = 'www2.nearzero.io'
-        deploy = 'deploy-dev.sh'
+        domain  = 'www2.nearzero.io'
+        deploy  = 'deploy-dev.sh'
+        restart = 'no'
     }
 
     stage('Build') {
@@ -30,7 +33,7 @@ node {
         sh """
             docker run \
                 -d \
-                --restart always \
+                --restart ${restart} \
                 --name ${domain} \
                 -e 'CADDYPATH=/opt/caddy/.caddy' \
                 -v /home/docker/volumes/${domain}/:/opt/caddy/ \
