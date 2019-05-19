@@ -5,12 +5,10 @@ node {
 
     if (env.BRANCH_NAME == 'master') {
         domain  = 'www.nearzero.io'
-        deploy  = 'deploy.sh'
         restart = 'always'
     }
     else {
         domain  = 'www2.nearzero.io'
-        deploy  = 'deploy-dev.sh'
         restart = 'no'
     }
 
@@ -28,15 +26,13 @@ node {
             
         }
         
-        sh "./${deploy}"
-
         sh """
             docker run \
                 -d \
                 --restart ${restart} \
                 --name ${domain} \
                 -e 'CADDYPATH=/opt/caddy/.caddy' \
-                -v /home/docker/volumes/${domain}/:/opt/caddy/ \
+                -v /home/docker/volumes/minecraft_backups/:/opt/caddy/html/minecraft/ \
                 --network='traefik' \
                 --label 'traefik.enable=true' \
                 --label 'traefik.basic.frontend.rule=Host:${domain}' \
