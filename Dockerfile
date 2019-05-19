@@ -8,6 +8,6 @@ WORKDIR "/opt/caddy/html"
 
 EXPOSE 2015
 
-VOLUME ["/opt/caddy/html/minecraft"]
+VOLUME ["/opt/caddy/minecraft"]
 ENTRYPOINT ["/usr/sbin/caddy"]
 CMD ["-conf", "/opt/caddy/Caddyfile", "-log", "stdout", "-agree"]
