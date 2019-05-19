@@ -1,9 +1,10 @@
+http://*.nearzero.io/minecraft/:2015 {
+    root /opt/caddy/minecraft
+    browse
+}
+
 http://*.nearzero.io:2015 {
 
 }
 
-http://*.nearzero.io/minecraft:2015 {
-    root /opt/caddy/minecraft
-    browse
-}
 
