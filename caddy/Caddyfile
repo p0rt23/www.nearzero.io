@@ -1,7 +1,3 @@
-*.nearzero.io:80
+localhost:80
 
 browse /minecraft
-
-tls {
-    dns godaddy
-}
