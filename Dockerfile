@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk update && apk add caddy
 
-COPY "./caddy/*" "/opt/caddy/"
+COPY caddy/ /opt/caddy/
 
 WORKDIR "/opt/caddy/html"
 
