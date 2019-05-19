@@ -32,7 +32,7 @@ node {
                 --restart ${restart} \
                 --name ${domain} \
                 -e 'CADDYPATH=/opt/caddy/.caddy' \
-                -v /home/docker/volumes/minecraft_backups/:/opt/caddy/html/minecraft/ \
+                -v /home/docker/volumes/minecraft-backups/:/opt/caddy/html/minecraft/ \
                 --network='traefik' \
                 --label 'traefik.enable=true' \
                 --label 'traefik.basic.frontend.rule=Host:${domain}' \
