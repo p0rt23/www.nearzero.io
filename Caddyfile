@@ -1,4 +1,3 @@
-http://*.nearzero.io:80
+http://*.nearzero.io:2015
 
-root * /www
-file_server /minecraft/* browse
+browse /minecraft
