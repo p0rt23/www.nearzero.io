@@ -14,4 +14,4 @@ FROM caddy:2-alpine
 
 # COPY --from=build /usr/bin/caddy /usr/bin/caddy
 COPY Caddyfile /etc/caddy/Caddyfile
-COPY site /usr/share/caddy
+COPY site /www
