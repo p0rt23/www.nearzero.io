@@ -14,7 +14,7 @@ node {
 
     stage('Build') {
         checkout scm
-        sh "docker build --no-cache -t p0rt23/caddy ."
+        sh "docker build -t p0rt23/caddy ."
     }
 
     stage('Deploy') {
@@ -29,15 +29,15 @@ node {
         sh """
             docker run \
                 -d \
-                --restart ${restart} \
-                --name ${domain} \
-                -e 'CADDYPATH=/opt/caddy/.caddy' \
-                -v /home/docker/backups/minecraft:/opt/caddy/html/minecraft/ \
+                --restart=${restart} \
+                --name=${domain} \
+                -v /home/docker/backups/minecraft:/usr/share/caddy/minecraft/ \
+                -v caddy-data-${domain}:/data \
+                -v caddy-config-${domain}:/config \
                 --network='traefik' \
-                --label 'traefik.enable=true' \
-                --label 'traefik.basic.frontend.rule=Host:${domain}' \
+                --label='traefik.enable=true' \
+                --label='traefik.basic.frontend.rule=Host:${domain}' \
                 p0rt23/caddy
         """
     }
-
 }

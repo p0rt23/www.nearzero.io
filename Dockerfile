@@ -1,13 +1,10 @@
-FROM alpine:latest
+FROM caddy:2-builder AS builder
 
-RUN apk update && apk add caddy
+RUN caddy-builder \
+    github.com/miekg/caddy-prometheus
 
-COPY caddy/ /opt/caddy/
+FROM caddy:2-alpine
 
-WORKDIR "/opt/caddy/html"
-
-EXPOSE 2015
-
-VOLUME ["/opt/caddy/html/minecraft"]
-ENTRYPOINT ["/usr/sbin/caddy"]
-CMD ["-conf", "/opt/caddy/Caddyfile", "-log", "stdout", "-agree"]
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY site /usr/share/caddy
