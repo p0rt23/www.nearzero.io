@@ -2,6 +2,7 @@ node {
 
     def domain
     def restart
+    def version = '1.0.5'
 
     if (env.BRANCH_NAME == 'master') {
         domain  = 'www.nearzero.io'
@@ -14,7 +15,7 @@ node {
 
     stage('Build') {
         checkout scm
-        sh "docker build --no-cache -t p0rt23/caddy ."
+        sh "docker build -t p0rt23/caddy:${version} ."
     }
 
     stage('Deploy') {
@@ -29,15 +30,13 @@ node {
         sh """
             docker run \
                 -d \
-                --restart ${restart} \
-                --name ${domain} \
-                -e 'CADDYPATH=/opt/caddy/.caddy' \
-                -v /home/docker/backups/minecraft:/opt/caddy/html/minecraft/ \
+                --restart=${restart} \
+                --name=${domain} \
+                -v /home/docker/backups/minecraft:/www/minecraft/ \
                 --network='traefik' \
-                --label 'traefik.enable=true' \
-                --label 'traefik.basic.frontend.rule=Host:${domain}' \
-                p0rt23/caddy
+                --label='traefik.enable=true' \
+                --label='traefik.basic.frontend.rule=Host:${domain}' \
+                p0rt23/caddy:${version}
         """
     }
-
 }

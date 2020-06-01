@@ -1,13 +1,26 @@
+FROM golang:1.14-alpine AS build
+
+RUN apk add --no-cache git
+
+COPY caddy /caddy
+WORKDIR /caddy
+
+RUN go mod init caddy && \
+    go get github.com/caddyserver/caddy@v1.0.5 && \
+    go build
+
+# Test
+RUN ./caddy -version
+RUN ./caddy -plugins
+
 FROM alpine:latest
 
-RUN apk update && apk add caddy
-
-COPY caddy/ /opt/caddy/
-
-WORKDIR "/opt/caddy/html"
+COPY --from=build /caddy/caddy /usr/bin/caddy
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY site /www
 
 EXPOSE 2015
+EXPOSE 9180
 
-VOLUME ["/opt/caddy/html/minecraft"]
-ENTRYPOINT ["/usr/sbin/caddy"]
-CMD ["-conf", "/opt/caddy/Caddyfile", "-log", "stdout", "-agree"]
+ENTRYPOINT ["/usr/bin/caddy"]
+CMD ["-conf", "/etc/caddy/Caddyfile", "-log", "stdout", "-agree"]
