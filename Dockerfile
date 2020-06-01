@@ -19,5 +19,7 @@ COPY --from=build /caddy/caddy /usr/bin/caddy
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY site /www
 
+EXPOSE 2015
+
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["-conf", "/etc/caddy/Caddyfile", "-log", "stdout", "-agree"]
