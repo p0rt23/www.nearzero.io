@@ -20,6 +20,7 @@ COPY Caddyfile /etc/caddy/Caddyfile
 COPY site /www
 
 EXPOSE 2015
+EXPOSE 9180
 
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["-conf", "/etc/caddy/Caddyfile", "-log", "stdout", "-agree"]
