@@ -1,3 +1,4 @@
-http://*.nearzero.io:2015
+:2015
 
+root /www
 browse /minecraft
