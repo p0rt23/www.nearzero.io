@@ -15,7 +15,7 @@ node {
 
     stage('Build') {
         checkout scm
-        sh 'echo "prometheus address ${domain}:9180" >> Caddyfile'
+        sh "echo \"prometheus address ${domain}:9180\" >> Caddyfile"
         sh "docker build -t p0rt23/caddy:${version} ."
     }
 
