@@ -4,5 +4,5 @@ root /www
 browse /minecraft
 
 prometheus {
-    address www2.nearzero.io:9180
+    address www.nearzero.io:9180
 }
