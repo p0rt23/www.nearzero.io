@@ -1,392 +1,386 @@
 <template>
   <div class="wrapper">
     <parallax
-      class="page-header header-filter clear-filter"
+      class="section page-header header-filter"
       parallax-active="true"
       :style="headerStyle"
     >
-      <div class="md-layout">
-        <div class="md-layout-item">
-          <div class="image-wrapper">
-            <img
-              v-show="leafShow"
-              :src="leaf4"
-              alt="leaf4"
-              class="leaf4"
+      <div class="container">
+        <div class="md-layout">
+          <div class="md-layout-item md-size-50 md-small-size-100">
+            <h1 class="title">
+              Your Story Starts With Us.
+            </h1>
+            <h4>
+              Every landing page needs a small description after the big bold
+              title, that's why we added this text here. Add here all the
+              information that can make you or your product create the first
+              impression.
+            </h4>
+            <br>
+            <md-button
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              class="md-success md-lg"
+              target="_blank"
             >
-            <img
-              v-show="leafShow"
-              :src="leaf3"
-              alt="leaf3"
-              class="leaf3"
-            >
-            <img
-              v-show="leafShow"
-              :src="leaf2"
-              alt="leaf2"
-              class="leaf2"
-            >
-            <img
-              v-show="leafShow"
-              :src="leaf1"
-              alt="leaf1"
-              class="leaf1"
-            >
-            <div class="brand">
-              <h1>
-                Vue Material Kit
-              </h1>
-              <span class="pro-badge">
-                Pro
-              </span>
-              <h3 class="title">
-                All components
-                <div>&nbsp;</div>
-              </h3>
-            </div>
+              <i class="fas fa-play" /> Watch video
+            </md-button>
           </div>
         </div>
       </div>
     </parallax>
-    <div
-      id="main-panel"
-      class="main main-raised"
-    >
-      <div
-        id="basic-elements"
-        class="cd-section section section-basic"
-      >
-        <div class="container">
-          <div class="title">
-            <h2>Basic Elements</h2>
-          </div>
-          <basic-elements />
-        </div>
-      </div>
-      <div
-        id="navigation"
-        class="cd-section section section-navbars"
-      >
-        <div class="container">
-          <small-navigation />
-        </div>
-        <navigation />
-      </div>
-      <div class="section section-tabs">
-        <div class="container">
-          <tabs />
-        </div>
-      </div>
-      <div class="section section-white mb-0">
-        <div class="container">
-          <nav-pills />
-        </div>
-      </div>
-      <div
-        id="notifications"
-        class="cd-section section section-notifications"
-      >
-        <div class="container">
-          <div class="title">
-            <h3>Notifications</h3>
-          </div>
-        </div>
-        <notifications />
-      </div>
-      <div
-        id="footers"
-        class="cd-section"
-      >
-        <div class="section section-gray">
-          <div class="container">
-            <div class="title">
-              <h3>Pre-Footer Areas</h3>
-            </div>
-          </div>
-          <pre-footer-areas />
-        </div>
-        <div class="section section-gray">
-          <div class="container">
-            <div class="title">
-              <h3>Footer Areas</h3>
-            </div>
-          </div>
-          <footer-areas />
-        </div>
-      </div>
-      <div
-        id="typography"
-        class="cd-section section"
-      >
-        <div class="container">
-          <typography-images />
-        </div>
-      </div>
-      <div
-        id="content-areas"
-        class="cd-section section"
-      >
-        <div class="container">
-          <tables />
-        </div>
-      </div>
+    <div class="main main-raised">
       <div class="section">
         <div class="container">
-          <comments />
+          <div class="md-layout">
+            <div
+              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
+            >
+              <h2 class="title text-center">
+                Let's talk product
+              </h2>
+              <h5 class="description">
+                This is the paragraph where you can write more details about
+                your product. Keep you user engaged by providing meaningful
+                information. Remember that by this time, the user is curious,
+                otherwise he wouldn't scroll to get here. Add a button if you
+                want the user to see more.
+              </h5>
+            </div>
+          </div>
+          <div class="features text-center">
+            <div class="md-layout">
+              <div class="md-layout-item md-size-33 md-small-size-100">
+                <div class="info">
+                  <div class="icon icon-info">
+                    <md-icon>chat</md-icon>
+                  </div>
+                  <h4 class="info-title">
+                    Free Chat
+                  </h4>
+                  <p>
+                    Divide details about your product or agency work into parts.
+                    Write a few lines about each one. A paragraph describing a
+                    feature will be enough.
+                  </p>
+                </div>
+              </div>
+              <div class="md-layout-item md-size-33 md-small-size-100">
+                <div class="info">
+                  <div class="icon icon-success">
+                    <md-icon>verified_user</md-icon>
+                  </div>
+                  <h4 class="info-title">
+                    Verified Users
+                  </h4>
+                  <p>
+                    Divide details about your product or agency work into parts.
+                    Write a few lines about each one. A paragraph describing a
+                    feature will be enough.
+                  </p>
+                </div>
+              </div>
+              <div class="md-layout-item md-size-33 md-small-size-100">
+                <div class="info">
+                  <div class="icon icon-danger">
+                    <md-icon>fingerprint</md-icon>
+                  </div>
+                  <h4 class="info-title">
+                    Fingerprint
+                  </h4>
+                  <p>
+                    Divide details about your product or agency work into parts.
+                    Write a few lines about each one. A paragraph describing a
+                    feature will be enough.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="cd-section">
-        <div
-          id="cards"
-          class="section section-gray pb-0"
-        >
-          <div class="container">
-            <cards />
-          </div>
-        </div>
-        <div
-          id="morphing-cards"
-          class="cd-section section section-gray"
-        >
-          <div class="container">
-            <cards section-morphing-cards />
-          </div>
-        </div>
-        <div class="section">
-          <div class="container">
-            <cards section-card-plain />
-          </div>
-        </div>
-      </div>
-      <div
-        id="javascript"
-        class="cd-section section section-javascript"
-      >
+      <div class="section text-center">
         <div class="container">
-          <javascript-components />
+          <h2 class="title">
+            Here is our team
+          </h2>
+          <div class="team">
+            <div class="md-layout">
+              <div class="md-layout-item md-size-50 md-small-size-100">
+                <profile-card
+                  text-center
+                  card-plain
+                  type="horizontal"
+                  :shadow-normal="false"
+                  :no-colored-shadow="false"
+                  :card-image="cardProfile3.cardProfile1"
+                >
+                  <template slot="cardContent">
+                    <h4 class="card-title">
+                      Alec Thompson
+                    </h4>
+                    <h6 class="card-category text-muted">
+                      Founder
+                    </h6>
+                    <p class="card-description">
+                      Don't be scared of the truth because we need to restart
+                      the human foundation in truth...
+                    </p>
+                  </template>
+                  <template slot="cardAction">
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-twitter md-just-icon md-simple"
+                    >
+                      <i class="fab fa-twitter" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-facebook md-just-icon md-simple"
+                    >
+                      <i class="fab fa-facebook" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-google md-just-icon md-simple"
+                    >
+                      <i class="fab fa-google" />
+                    </md-button>
+                  </template>
+                </profile-card>
+              </div>
+              <div class="md-layout-item md-size-50 md-small-size-100">
+                <profile-card
+                  text-center
+                  card-plain
+                  type="horizontal"
+                  :shadow-normal="false"
+                  :no-colored-shadow="false"
+                  :card-image="cardProfile3.cardProfile2"
+                >
+                  <template slot="cardContent">
+                    <h4 class="card-title">
+                      Kendall Andrew
+                    </h4>
+                    <h6 class="card-category text-muted">
+                      GRAPHIC DESIGNER
+                    </h6>
+                    <p class="card-description">
+                      Don't be scared of the truth because we need to restart
+                      the human foundation in truth...
+                    </p>
+                  </template>
+                  <template slot="cardAction">
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-linkedin md-just-icon md-simple"
+                    >
+                      <i class="fab fa-linkedin" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-facebook md-just-icon md-simple"
+                    >
+                      <i class="fab fa-facebook" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-dribbble md-just-icon md-simple"
+                    >
+                      <i class="fab fa-dribbble" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-google md-just-icon md-simple"
+                    >
+                      <i class="fab fa-google" />
+                    </md-button>
+                  </template>
+                </profile-card>
+              </div>
+              <div class="md-layout-item md-size-50 md-small-size-100">
+                <profile-card
+                  text-center
+                  card-plain
+                  type="horizontal"
+                  :shadow-normal="false"
+                  :no-colored-shadow="false"
+                  :card-image="cardProfile3.cardProfile3"
+                >
+                  <template slot="cardContent">
+                    <h4 class="card-title">
+                      Gina Andrew
+                    </h4>
+                    <h6 class="card-category text-muted">
+                      PHOTOGRAPHER
+                    </h6>
+                    <p class="card-description">
+                      I love you like Kanye loves Kanye. Don't be scared of the
+                      truth.
+                    </p>
+                  </template>
+                  <template slot="cardAction">
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-youtube md-just-icon md-simple"
+                    >
+                      <i class="fab fa-youtube" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-twitter md-just-icon md-simple"
+                    >
+                      <i class="fab fa-twitter" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-instagram md-just-icon md-simple"
+                    >
+                      <i class="fab fa-instagram" />
+                    </md-button>
+                  </template>
+                </profile-card>
+              </div>
+              <div class="md-layout-item md-size-50 md-small-size-100">
+                <profile-card
+                  text-center
+                  card-plain
+                  type="horizontal"
+                  :shadow-normal="false"
+                  :no-colored-shadow="false"
+                  :card-image="cardProfile3.cardProfile4"
+                >
+                  <template slot="cardContent">
+                    <h4 class="card-title">
+                      George West
+                    </h4>
+                    <h6 class="card-category text-muted">
+                      BACKEND HACKER
+                    </h6>
+                    <p class="card-description">
+                      I love you like Kanye loves Kanye. Don't be scared of the
+                      truth.
+                    </p>
+                  </template>
+                  <template slot="cardAction">
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-linkedin md-just-icon md-simple"
+                    >
+                      <i class="fab fa-linkedin" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-facebook md-just-icon md-simple"
+                    >
+                      <i class="fab fa-facebook" />
+                    </md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-google md-just-icon md-simple"
+                    >
+                      <i class="fab fa-google" />
+                    </md-button>
+                  </template>
+                </profile-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-contacts">
+        <div class="container">
+          <div class="md-layout">
+            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
+              <h2 class="text-center title">
+                Work with us
+              </h2>
+              <h4 class="text-center description">
+                Divide details about your product or agency work into parts.
+                Write a few lines about each one and contact us about any
+                further collaboration. We will responde get back to you in a
+                couple of hours.
+              </h4>
+              <form class="contact-form">
+                <div class="md-layout">
+                  <div class="md-layout-item md-size-50 md-small-size-100">
+                    <md-field>
+                      <label>Your Name</label>
+                      <md-input
+                        v-model="name"
+                        type="text"
+                      />
+                    </md-field>
+                  </div>
+                  <div class="md-layout-item md-size-50 md-small-size-100">
+                    <md-field>
+                      <label>Your Email</label>
+                      <md-input
+                        v-model="email"
+                        type="email"
+                      />
+                    </md-field>
+                  </div>
+                </div>
+                <md-field maxlength="5">
+                  <label>Your Message</label>
+                  <md-textarea v-model="message" />
+                </md-field>
+                <div class="md-layout">
+                  <div
+                    class="md-layout-item md-size-33 md-small-size-100 mx-auto text-center"
+                  >
+                    <md-button class="md-success">
+                      Send Message
+                    </md-button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <nav
-      id="cd-vertical-nav"
-      class="vertical-nav-active"
-    >
-      <ul>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="1"
-            @click="scrollToElement('basic-elements')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Basic Elements</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="2"
-            @click="scrollToElement('navigation')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Navigation</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="3"
-            @click="scrollToElement('notifications')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Notifications</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="4"
-            @click="scrollToElement('footers')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Footers</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="5"
-            @click="scrollToElement('typography')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Typography</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="6"
-            @click="scrollToElement('content-areas')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Content Areas</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="7"
-            @click="scrollToElement('cards')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Cards</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="8"
-            @click="scrollToElement('morphing-cards')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Morphing Cards</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="9"
-            @click="scrollToElement('javascript')"
-          >
-            <span class="cd-dot" />
-            <span class="cd-label">Javascript</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
   </div>
 </template>
 
 <script>
-import BasicElements from "./components/BasicElementsSection";
-import Navigation from "./components/NavigationSection";
-import SmallNavigation from "./components/SmallNavigationSection";
-import Tabs from "./components/TabsSection";
-import NavPills from "./components/NavPillsSection";
-import Notifications from "./components/NotificationsSection";
-import TypographyImages from "./components/TypographyImagesSection";
-import JavascriptComponents from "./components/JavascriptComponentsSection";
-import PreFooterAreas from "./components/PreFooterSection";
-import FooterAreas from "./components/FooterSection";
-import Tables from "./components/TablesSection";
-import Comments from "./components/CommentsSection";
-import Cards from "./components/CardsSection";
+import { ProfileCard } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 
 export default {
-  name: "Index",
   components: {
-    BasicElements,
-    Navigation,
-    SmallNavigation,
-    Tabs,
-    NavPills,
-    Notifications,
-    TypographyImages,
-    JavascriptComponents,
-    PreFooterAreas,
-    FooterAreas,
-    Tables,
-    Comments,
-    Cards
+    ProfileCard
   },
-  mixins: [Mixins.VerticalNav, Mixins.HeaderImage],
-  bodyClass: "index-page",
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
-    },
-    leaf4: {
-      type: String,
-      default: require("@/assets/img/leaf4.png")
-    },
-    leaf3: {
-      type: String,
-      default: require("@/assets/img/leaf3.png")
-    },
-    leaf2: {
-      type: String,
-      default: require("@/assets/img/leaf2.png")
-    },
-    leaf1: {
-      type: String,
-      default: require("@/assets/img/leaf1.png")
-    },
-    landing: {
-      type: String,
-      default: require("@/assets/img/landing.jpg")
-    },
-    profile: {
-      type: String,
-      default: require("@/assets/img/profile.jpg")
-    }
-  },
+  mixins: [Mixins.HeaderImage],
+  bodyClass: "landing-page",
   data() {
     return {
-      firstname: null,
+      image: require("@/assets/img/bg7.jpg"),
+      name: null,
       email: null,
-      password: null,
-      leafShow: false
-    };
-  },
-  mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
-    document.addEventListener("scroll", this.scrollListener);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
-    document.removeEventListener("scroll", this.scrollListener);
-  },
-  methods: {
-    leafActive() {
-      if (window.innerWidth < 768) {
-        this.leafShow = false;
-      } else {
-        this.leafShow = true;
+      message: null,
+      cardProfile3: {
+        cardProfile1: require("@/assets/img/faces/card-profile1-square.jpg"),
+        cardProfile2: require("@/assets/img/faces/card-profile6-square.jpg"),
+        cardProfile3: require("@/assets/img/faces/card-profile4-square.jpg"),
+        cardProfile4: require("@/assets/img/faces/card-profile2-square.jpg")
       }
-    }
+    };
   }
 };
 </script>
-<style lang="scss">
-.section-download {
-  .md-button + .md-button {
-    margin-left: 5px;
-  }
+
+<style lang="scss" scoped>
+.md-card-actions.text-center {
+  display: flex;
+  justify-content: center !important;
+}
+.contact-form {
+  margin-top: 30px;
 }
 
-.vertical-nav-active {
-  display: block;
-}
-
-@media all and (min-width: 991px) {
-  .btn-container {
-    display: flex;
-  }
-}
-@media all and (max-width: 768px) {
-  .vertical-nav-active {
-    display: none;
-  }
-}
-
-.mb-0 {
-  padding-bottom: 0 !important;
-}
-
-#morphing-cards {
-  padding-top: 70px;
+.md-has-textarea + .md-layout {
+  margin-top: 15px;
 }
 </style>

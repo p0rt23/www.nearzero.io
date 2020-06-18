@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 //  Main Pages
 import Index from "./views/Index.vue";
+import Default from "./views/Default.vue";
 import Sections from "./views/Sections.vue";
 import Presentation from "./views/Presentation.vue";
 
@@ -21,6 +22,7 @@ import Product from "./views/examples/Product.vue";
 import Signup from "./views/examples/Signup.vue";
 import Error from "./views/examples/Error.vue";
 
+import NzMainNavbar from "./layout/NzMainNavbar.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 
@@ -31,7 +33,15 @@ export default new Router({
     {
       path: "/",
       name: "index",
-      components: { default: Index, header: MainNavbar, footer: MainFooter },
+      components: { default: Index, header: NzMainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
+    },
+    {
+      path: "/assets",
+      name: "assets",
+      components: { default: Default, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400, navbarTransparent: true }
       }
