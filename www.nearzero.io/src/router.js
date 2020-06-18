@@ -1,8 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-//  Main Pages
+// Site
 import Index from "./views/Index.vue";
+import NzMainNavbar from "./layout/NzMainNavbar.vue";
+import NzMainFooter from "./layout/NzMainFooter.vue";
+
+//  Page Examples
 import Default from "./views/Default.vue";
 import Sections from "./views/Sections.vue";
 import Presentation from "./views/Presentation.vue";
@@ -21,8 +25,6 @@ import Ecommerce from "./views/examples/Ecommerce.vue";
 import Product from "./views/examples/Product.vue";
 import Signup from "./views/examples/Signup.vue";
 import Error from "./views/examples/Error.vue";
-
-import NzMainNavbar from "./layout/NzMainNavbar.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 
@@ -30,14 +32,16 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
+    // Site
     {
       path: "/",
       name: "index",
-      components: { default: Index, header: NzMainNavbar, footer: MainFooter },
+      components: { default: Index, header: NzMainNavbar, footer: NzMainFooter },
       props: {
         header: { colorOnScroll: 400, navbarTransparent: true }
       }
     },
+    // Examples
     {
       path: "/assets",
       name: "assets",
