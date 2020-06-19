@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine AS build
+FROM golang:1.14-alpine AS golang-build
 
 RUN apk add --no-cache git
 
@@ -13,11 +13,23 @@ RUN go mod init caddy && \
 RUN ./caddy -version
 RUN ./caddy -plugins
 
+FROM alpine:latest AS node-build
+RUN apk update && \
+    apk add build-base && \
+    apk add python3 && \
+    apk add nodejs && \
+    apk add npm
+RUN npm install -g @vue/cli
+
+COPY site /site
+WORKDIR /site
+RUN npm install && npm run build
+
 FROM alpine:latest
 
-COPY --from=build /caddy/caddy /usr/bin/caddy
+COPY --from=golang-build /caddy/caddy /usr/bin/caddy
+COPY --from=node-build /site/dist /www
 COPY Caddyfile /etc/caddy/Caddyfile
-COPY site /www
 
 EXPOSE 2015
 EXPOSE 9180

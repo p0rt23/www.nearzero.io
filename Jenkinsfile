@@ -2,7 +2,6 @@ node {
 
     def domain
     def restart
-    def version = '1.0.5'
 
     if (env.BRANCH_NAME == 'master') {
         domain  = 'www.nearzero.io'
@@ -15,7 +14,7 @@ node {
 
     stage('Build') {
         checkout scm
-        sh "docker build -t p0rt23/caddy:${version} ."
+        sh "docker build -t p0rt23/www.nearzero.io ."
     }
 
     stage('Deploy') {
@@ -36,7 +35,7 @@ node {
                 --network='traefik' \
                 --label='traefik.enable=true' \
                 --label='traefik.basic.frontend.rule=Host:${domain}' \
-                p0rt23/caddy:${version}
+                p0rt23/www.nearzero.io
         """
     }
 }
