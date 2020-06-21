@@ -1,6 +1,6 @@
 node {
 
-    def domain
+    def domain, domainEscaped
     def restart
     def version = '1.0.5'
 
@@ -12,6 +12,7 @@ node {
         domain  = 'www2.nearzero.io'
         restart = 'no'
     }
+    domainEscaped = domain.replaceAll('.', '-')
 
     stage('Build') {
         checkout scm
@@ -35,7 +36,7 @@ node {
                 -v /home/docker/backups/minecraft:/www/minecraft/ \
                 --network='traefik' \
                 --label='traefik.enable=true' \
-                --label='traefik.basic.frontend.rule=Host:${domain}' \
+                --label='traefik.http.routers.${domainEscaped}.rule=Host(`${domain}`)' \
                 p0rt23/www.nearzero.io
         """
     }
