@@ -12,7 +12,7 @@ node {
         domain  = 'www2.nearzero.io'
         restart = 'no'
     }
-    domainEscaped = domain.replaceAll('.', '-')
+    domainEscaped = domain.replace('.', '-')
 
     stage('Build') {
         checkout scm
