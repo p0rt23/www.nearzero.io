@@ -33,7 +33,7 @@
                 World downloads?
               </h2>
               <h5 class="description">
-                Click <a href="/minecraft">here</a> for hourly backups.
+                Click <a href="/minecraft/?sort=time&order=desc">here</a> for hourly backups.
               </h5>
             </div>
           </div>
