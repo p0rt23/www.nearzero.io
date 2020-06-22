@@ -33,7 +33,7 @@ node {
                 -d \
                 --restart=${restart} \
                 --name=${domain} \
-                -v /home/docker/backups/minecraft:/www/minecraft/ \
+                -v /home/docker/backups/minecraft:/www/minecraft:ro \
                 --network='traefik' \
                 --label='traefik.enable=true' \
                 --label='traefik.http.routers.${domainEscaped}.rule=Host(`${domain}`)' \
