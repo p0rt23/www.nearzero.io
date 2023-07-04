@@ -3,7 +3,7 @@ node {
     def domain, domainEscaped
     def restart
 
-    if (env.BRANCH_NAME == 'master') {
+    if (env.BRANCH_NAME == 'main') {
         domain  = 'www.nearzero.io'
         restart = 'always'
     }
