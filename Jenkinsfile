@@ -2,7 +2,6 @@ node {
 
     def domain, domainEscaped
     def restart
-    def version = '1.0.5'
 
     if (env.BRANCH_NAME == 'master') {
         domain  = 'www.nearzero.io'

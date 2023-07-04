@@ -1,7 +1,6 @@
 :2015
 
 root /www
-browse /minecraft
 
 prometheus {
     address www.nearzero.io:9180
