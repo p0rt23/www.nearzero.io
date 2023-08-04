@@ -1,7 +1,0 @@
-:2015
-
-root /www
-
-prometheus {
-    address www.nearzero.io:9180
-}
