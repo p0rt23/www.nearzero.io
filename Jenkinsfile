@@ -1,21 +1,23 @@
 node {
-
     def domain, domainEscaped
     def restart
+    def imageTag
 
     if (env.BRANCH_NAME == 'main') {
-        domain  = 'www.nearzero.io'
-        restart = 'always'
+        domain   = 'www.nearzero.io'
+        restart  = 'always'
+        imageTag = 'latest'
     }
     else {
         domain  = 'www2.nearzero.io'
         restart = 'no'
+        imageTag = 'develop'
     }
     domainEscaped = domain.replace('.', '-')
 
     stage('Build') {
         checkout scm
-        sh "docker build -t p0rt23/www.nearzero.io ."
+        sh "docker build -t p0rt23/www.nearzero.io:${imageTag} ."
     }
 
     stage('Deploy') {
@@ -35,7 +37,7 @@ node {
                 --network='traefik' \
                 --label='traefik.enable=true' \
                 --label='traefik.http.routers.${domainEscaped}.rule=Host(`${domain}`)' \
-                p0rt23/www.nearzero.io
+                p0rt23/www.nearzero.io:${imageTag}
         """
     }
 }
