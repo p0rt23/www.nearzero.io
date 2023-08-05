@@ -1,7 +1,7 @@
 FROM debian:bookworm-slim as builder
 
 RUN apt-get update -y && apt-get install -y \
-  curl build-essential nodejs npm
+  curl build-essential pkg-config libssl-dev nodejs npm
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
