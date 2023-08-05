@@ -1,2 +1,4 @@
-[serve]
-address = "192.168.56.5"
+[[hooks]]
+stage = "pre_build"
+command = "sh"
+command_arguments = ["-c", "npx tailwindcss -i input.css -o style/output.css"]

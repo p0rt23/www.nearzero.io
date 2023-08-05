@@ -1,22 +1,15 @@
+mod app;
+
+use app::*;
 use leptos::*;
 
-fn main() {
-    mount_to_body(|cx| view! {cx, <App />})
-}
+pub fn main() {
+    _ = console_log::init_with_level(log::Level::Debug);
+    console_error_panic_hook::set_once();
 
-#[component]
-fn App(cx: Scope) -> impl IntoView {
-    let (count, set_count) = create_signal(cx, 0);
+    log!("csr mode - mounting to body");
 
-    view! { cx,
-        <button
-            on:click = move |_| {
-                set_count.update(|n| *n += 1);
-            }
-            class:red = move || count() % 2 == 1
-        >
-            "Click me: "
-            { count }
-        </button>
-    }
+    mount_to_body(|cx| {
+        view! { cx, <App /> }
+    });
 }
